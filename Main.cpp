@@ -7,11 +7,20 @@ enum class PokemonChoice{
     Squirtle,
     InvalidChoice
 };
+enum class HealingItems {
+    Potion,
+    Elixir
+};
+enum class BattleItems {
+    Potion,
+    Elixir
+};
 int main()
 {
     string player_Name;
     PokemonChoice pokemon_Choice = PokemonChoice::InvalidChoice;
-
+    HealingItems healingItems = HealingItems::Elixir;
+    BattleItems battleItem = BattleItems::Potion;
     // Introduction by the Professor
     cout << "Professor Oak: Hello there! Welcome to the world of Pokemon!\n";
     cout << "Professor Oak: My name is Oak. People call me the Pokemon "
@@ -76,6 +85,38 @@ int main()
 
     cout << "Professor Oak: " << (pokemon_Choice == PokemonChoice::Charmander ? "Charmander" : pokemon_Choice == PokemonChoice::Bulbasaur ? "Bulbasaur" : "Squirtle")
               << " and you, " << player_Name << ", are going to be the best of friends!\n";
-    cout << "Professor Oak: Your journey begins now! Get ready to explore the vast world of Pokemon!\n";
+    cout << "Professor Oak: Your journey begins now! Get ready to explore the vast world of Pokemon!\n" << endl;
+
+    cout << "Choose Your Healing Item\n";
+    cin >> choice;
+
+    switch (choice)
+    {
+    case 1: 
+        healingItems = HealingItems::Potion;
+        cout << "Healing Potion used! Your Pokémon recovers HP!" << endl;
+        break;
+    
+    default:
+        healingItems = HealingItems::Elixir;
+        cout << "Healing Potion used! Your Pokémon recovers HP!" << endl;
+        break;
+    } 
+
+    cout << "Choose Your Battel item: \n";
+    cin >> choice;
+
+    switch (choice)
+    {
+    case 1:
+        battleItem = BattleItems::Elixir;
+        cout <<"Battle Potion used! Your Pokémon's attack power rises!" << endl;
+        break;
+    
+    default:
+        battleItem = BattleItems::Potion;
+        cout <<"Battle Potion used! Your Pokémon's attack power rises!" << endl;
+        break;
+    }
 
 }
