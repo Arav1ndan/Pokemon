@@ -118,7 +118,7 @@ public:
     }
     void offerPokemonChoices(Player &player)
     {
-        cout << p_name << "First First, tell me, what's your name?\n";
+        cout << p_name << ": First First, tell me, what's your name?\n";
         cin >> player.p_name;
         cout << p_name << ": Ah, " << player.p_name << "! What a fantastic name!\n";
         cout << p_name << ": You must be eager to start your adventure. But first, you'll need a Pokemon of your own!\n";
@@ -133,6 +133,22 @@ public:
         cout << p_name << ": So, which one will it be? Enter the number of your choice: ";
         cin >> choice;
         player.choosePokemon(choice);
+    }
+    void explainMainQuest(Player &player)
+    {
+        cout << "Professor Oak:		Oak-ay " << player.p_name <<  "!, I am about to explain you about your upcoming grand adventure.\n";
+        cout << "Professor Oak: You see, becoming a Pokémon Master is no easy feat. It takes courage, wisdom, and a bit of luck!\n";
+        cout << "Professor Oak: Your mission, should you choose to accept it—and trust me, you really don't have a choice—is to collect all the Pokémon Badges and conquer the Pokémon League.\n";
+        cout << "\n" << player.p_name <<  ": Wait... that sounds a lot like every other Pokémon game out there...\n";
+        cout << "Professor Oak: Shhh! Don't break the fourth wall, " << player.p_name <<  "! This is serious business!\n";
+        cout << "\nProfessor Oak: To achieve this, you'll need to battle wild Pokémon, challenge gym leaders, and of course, keep your Pokémon healthy at the PokeCenter.\n";
+        cout << "Professor Oak: Along the way, you'll capture new Pokémon to strengthen your team. Just remember—there's a limit to how many Pokémon you can carry, so choose wisely!\n";
+        cout << "\n" << player.p_name << ": Sounds like a walk in the park... right?\n";
+        cout << "Professor Oak: Hah! That's what they all say! But beware, young Trainer, the path to victory is fraught with challenges. And if you lose a battle... well, let's just say you'll be starting from square one.\n";
+        cout << "\nProfessor Oak: So, what do you say? Are you ready to become the next Pokémon Champion?\n";
+        cout << "\n" << player.p_name << ": Ready as I'll ever be, Professor!\n";
+        cout << "\nProfessor Oak: That's the spirit! Now, your journey begins...\n";
+        cout << "Professor Oak: But first... let's just pretend I didn't forget to set up the actual game loop... Ahem, onwards!\n";
     }
 };
 int main()
@@ -152,94 +168,7 @@ int main()
     professor.greetPlayer(player);
     professor.offerPokemonChoices(player);
 
-    cout << "Professor Oak " <<player.chosenPokemon.name << "and you " <<player.p_name <<", are going to be the best of friends!\n";
+    professor.explainMainQuest(player);
+     cout << "\n[Placeholder for the Game Loop]\n";
     
 }
-
-// string player_Name;
-//     PokemonChoice pokemon_Choice = PokemonChoice::InvalidChoice;
-//     HealingItems healingItems = HealingItems::Elixir;
-//     BattleItems battleItem = BattleItems::Potion;
-//     // Introduction by the Professor
-//     cout << "Professor Oak: Hello there! Welcome to the world of Pokemon!\n";
-//     cout << "Professor Oak: My name is Oak. People call me the Pokemon "
-//             "Professor!\n";
-//     cout << "Professor Oak: But enough about me. Let's talk about you!\n";
-
-//     cout << "Professor Oak: First, tell me, what's your name?\n";
-//     cin >> player_Name;
-
-//     cout << "Professor Oak: Ah, " << player_Name << "! What a fantastic name!\n";
-//     cout << "Professor Oak: You must be eager to start your adventure. But "
-//             "first, you'll need a Pokemon of your own!\n";
-
-//     cout << "Professor Oak: I have three Pokemon here with me. They're all "
-//             "quite feisty!\n";
-//     cout << "Professor Oak: Choose wisely...\n";
-//     cout << "You can choose one of the following Pokémon:\n";
-//     cout << "1. Bulbasaur\n2. Charmander\n3. Squirtle\n";
-//     cout << "Which Pokemon would you like to choose? Enter the number: ";
-
-//     int choice;
-//     cin >> choice;
-
-//     switch (choice)
-//     {
-//     case 1:
-
-//         break;
-
-//     case 2:
-//         pokemon_Choice = PokemonChoice::Charmander;
-
-//         break;
-
-//     case 3:
-//         pokemon_Choice = PokemonChoice::Squirtle;
-
-//         break;
-
-//     default:
-
-//         pokemon_Choice = PokemonChoice::InvalidChoice;
-
-//         break;
-//     }
-
-//     cout << "Professor Oak: " << (pokemon_Choice == PokemonChoice::Charmander ? "Charmander" : pokemon_Choice == PokemonChoice::Bulbasaur ? "Bulbasaur"
-//                                                                                                                                           : "Squirtle")
-//          << " and you, " << player_Name << ", are going to be the best of friends!\n";
-//     cout << "Professor Oak: Your journey begins now! Get ready to explore the vast world of Pokemon!\n"
-//          << endl;
-
-//     cout << "Choose Your Healing Item\n";
-//     cin >> choice;
-
-//     switch (choice)
-//     {
-//     case 1:
-//         healingItems = HealingItems::Potion;
-//         cout << "Healing Potion used! Your Pokémon recovers HP!" << endl;
-//         break;
-
-//     default:
-//         healingItems = HealingItems::Elixir;
-//         cout << "Healing Potion used! Your Pokémon recovers HP!" << endl;
-//         break;
-//     }
-
-//     cout << "Choose Your Battel item: \n";
-//     cin >> choice;
-
-//     switch (choice)
-//     {
-//     case 1:
-//         battleItem = BattleItems::Elixir;
-//         cout << "Battle Potion used! Your Pokémon's attack power rises!" << endl;
-//         break;
-
-//     default:
-//         battleItem = BattleItems::Potion;
-//         cout << "Battle Potion used! Your Pokémon's attack power rises!" << endl;
-//         break;
-//     }
