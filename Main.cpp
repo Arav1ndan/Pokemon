@@ -22,7 +22,8 @@ enum class PokemonType
     FIRE,
     GRASS,
     WATER,
-    ELECTRIC
+    ELECTRIC,
+    NORMAL
 };
 class Pokemon
 {
@@ -33,14 +34,29 @@ public:
 
     Pokemon()
     {
+        name = "Pikachu";
+        type = PokemonType::ELECTRIC;
+        health = 10;
+        cout << "A new Pokemon has been created with the default constructor!\n";
     }
     Pokemon(string p_name, PokemonType p_type, int p_health)
     {
         name = p_name;
         type = p_type;
         health = p_health;
+        cout << "A new Pokemon named " << name << " has been created!\n";
     }
-
+    Pokemon(const Pokemon &other)
+    {
+        name = other.name;
+        type = other.type;
+        health = other.health;
+        cout << "A new Pokemon has been copied from " << other.name << "!\n";
+    }
+    ~Pokemon()
+    {
+        cout << name << "has been realeased.\n";
+    }
     void attack()
     {
         cout << name << "attacks with a powerful move!\n";
@@ -51,6 +67,22 @@ class Player
 public:
     string p_name;
     Pokemon chosenPokemon;
+    Player()
+    {
+        p_name = "Trainer";
+        cout << "A new Player named " <<  p_name << "has been created!\n" ;
+    }
+    Player(string name, Pokemon p_chosenPokemon)
+    {
+        name = p_name;
+        p_chosenPokemon = chosenPokemon;
+    }
+    Player(const Player& other)
+    {
+        p_name = other.p_name;
+        chosenPokemon = other.chosenPokemon;
+    }
+    
 
        void choosePokemon(int choice) {
         switch ((PokemonChoice)choice) { 
@@ -69,6 +101,10 @@ public:
                     } 
                     cout << "Player " << p_name << " chose " << chosenPokemon.name << "!\n";
     }
+    void showChosenPokemon() {
+        cout << "Player " << p_name << " has chosen " << chosenPokemon.name 
+             << " with health " << chosenPokemon.health << ".\n";
+    }
 };
 class Professor_Oak
 {
@@ -85,10 +121,9 @@ public:
         cout << p_name << "First First, tell me, what's your name?\n";
         cin >> player.p_name;
         cout << p_name << ": Ah, " << player.p_name << "! What a fantastic name!\n";
-        cout << p_name << ": You must be eager to start your adventure. But first, you’ll need a Pokemon of your own!\n";
+        cout << p_name << ": You must be eager to start your adventure. But first, you'll need a Pokemon of your own!\n";
 
-        // Presenting Pokemon choices
-        cout << p_name << ": I have three Pokemon here with me. They’re all quite feisty!\n";
+        cout << p_name << ": I have three Pokemon here with me. They're all quite feisty!\n";
         cout << p_name << ": Choose wisely...\n";
         std::cout << "1. Charmander - The fire type. A real hothead!\n";
         cout << "2. Bulbasaur - The grass type. Calm and collected!\n";
@@ -118,6 +153,7 @@ int main()
     professor.offerPokemonChoices(player);
 
     cout << "Professor Oak " <<player.chosenPokemon.name << "and you " <<player.p_name <<", are going to be the best of friends!\n";
+    
 }
 
 // string player_Name;
