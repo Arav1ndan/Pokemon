@@ -1,4 +1,6 @@
 #include <iostream>
+#include "PokemonType.hpp"
+#include "PokemonChoice.hpp"
 using namespace std;
 
 void waitForEnter()
@@ -14,13 +16,7 @@ void clearConsole()
     (void)system("clear");
 #endif
 }
-enum class PokemonChoice
-{
-    CHARMANDER = 1,
-    BULBASAUR,
-    SQUIRTLE,
-    PIKACHU // Default choice
-};
+
 enum class HealingItems
 {
     Potion,
@@ -31,14 +27,7 @@ enum class BattleItems
     Potion,
     Elixir
 };
-enum class PokemonType
-{
-    FIRE,
-    GRASS,
-    WATER,
-    ELECTRIC,
-    NORMAL
-};
+
 class Pokemon
 {
 public:
@@ -262,4 +251,4 @@ int main()
 
     professor.explainMainQuest(player);
     cout << "\n[Placeholder for the Game Loop]\n";
-#include "header.hpp"
+}
