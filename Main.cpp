@@ -262,4 +262,4 @@ int main()
 
     professor.explainMainQuest(player);
     cout << "\n[Placeholder for the Game Loop]\n";
-}
+#include "header.hpp"
