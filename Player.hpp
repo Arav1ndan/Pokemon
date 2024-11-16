@@ -2,6 +2,7 @@
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 #include "Utility.hpp"
+
 using namespace std;
 
 class Player {
