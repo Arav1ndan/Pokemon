@@ -15,9 +15,9 @@ Pokemon::Pokemon(const Pokemon &other)
     : name(other.name), type(other.type), health(other.health) {}
 
 
-Pokemon::~Pokemon() {
+// Pokemon::~Pokemon() {
    
-}
+// }
 
 void Pokemon::attack() {
     cout << name << " attacks with a powerful move!\n";
