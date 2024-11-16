@@ -4,11 +4,7 @@
 using namespace std;
 
 void Utility :: clearConsole() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
+ (void)system("clear");
 }
 
 void Utility :: waitForEnter() {
