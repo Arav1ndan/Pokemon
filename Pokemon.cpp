@@ -1,6 +1,6 @@
 #include "Pokemon.hpp"
-#include "PokemonType.hpp"
 #include <iostream>
+#include "PokemonType.hpp"
 using namespace std;
 
 
