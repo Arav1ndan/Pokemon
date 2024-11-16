@@ -1,22 +1,26 @@
 #include "Player.hpp"
-#include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
+#include "PokemonType.hpp"
 #include "Utility.hpp"
 #include <iostream>
 using namespace std;
+// Player class definition
+  
 
-Player::Player() {
-  name = "Trainer";
-  chosenPokemon = Pokemon(); // Using the default Pokemon constructor
-}
+  // Default constructor
+ Player :: Player() {
+    name = "Trainer";
+    chosenPokemon = Pokemon(); // Using the default Pokemon constructor
+  }
 
-Player::Player(string p_name, Pokemon p_chosenPokemon) {
-  name = p_name;
-  chosenPokemon = p_chosenPokemon;
-}
+  // Parameterized constructor
+  Player :: Player(string p_name, Pokemon p_chosenPokemon) {
+    name = p_name;
+    chosenPokemon = p_chosenPokemon;
+  }
 
-void Player::choosePokemon(int choice) {
-  switch ((PokemonChoice)choice) {
+  void Player :: choosePokemon(int choice) {
+    switch ((PokemonChoice)choice) {
     case PokemonChoice::CHARMANDER:
       chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
       break;
@@ -32,4 +36,4 @@ void Player::choosePokemon(int choice) {
     }
     cout << "Player " << name << " chose " << chosenPokemon.name << "!\n";
     Utility::waitForEnter(); // Wait for user to press Enter before proceeding
-}
+  } 
