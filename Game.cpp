@@ -3,12 +3,13 @@
 #include "PokemonType.hpp"
 #include "Utility.hpp"
 #include "WildEncounterManager.hpp"
+#include "BattleManager.hpp"
 #include <iostream>
 using namespace std;
 
 Game::Game(){
     forestGrass = {"Forest",
-    {Pokemon("Pidgey",PokemonType::NORMAL,40),
+    {Pokemon("Pidgey",PokemonType::NORMAL,40,10),
     Pokemon("Caterpie", PokemonType::BUG, 35),
     Pokemon("Zubat", PokemonType::POISON,30)},
     70};
@@ -16,6 +17,7 @@ Game::Game(){
 void Game::gameLoop(Player &player) {
 
   int choice;
+  BattleManager battleManager;
   bool keepPlaying = true;
 
   while (keepPlaying) {
@@ -37,16 +39,16 @@ void Game::gameLoop(Player &player) {
     // Process the player's choice and display the corresponding message
     switch (choice) {
     case 1: {
-      // Create a scope within case 1
-      WildEncounterManager encounterManager;
-      Pokemon encounteredPokemon =
-          encounterManager.getRandomPokemonFromGrass(forestGrass);
-      cout << "A wild " << encounteredPokemon.name << " appeared!\n";
+         WildEncounterManager encounterManager;
+                Pokemon wildPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+                battleManager.startBattle(player, wildPokemon);
       break;
     }
-    case 2: {
-      cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee "
-              "break. Guess your Pokémon will have to tough it out for now!\n";
+     case 2: {
+	        cout << "You head to the PokeCenter.\\n";
+	        player.chosenPokemon.heal(); // Heal the player's Pokémon
+	        cout << player.chosenPokemon.name << "'s health is fully restored!\\n";
+	        break;
       break;
     }
     case 3: {
