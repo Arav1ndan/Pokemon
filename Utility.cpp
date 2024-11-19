@@ -3,14 +3,16 @@
 #include <limits>
 using namespace std;
 
-void Utility :: clearConsole() {
- (void)system("clear");
+void Utility::clearConsole() {
+#ifdef _WIN32
+  system("cls");
+#else
+  system("clear");
+#endif
 }
 
-void Utility :: waitForEnter() {
-    cin.get();
-}
+void Utility::waitForEnter() { cin.get(); }
 
-void Utility :: clearInputBuffer() {
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+void Utility::clearInputBuffer() {
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
