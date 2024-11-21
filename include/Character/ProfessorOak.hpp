@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+using namespace N_Character{
 class Player;
 
 class ProfessorOak {
@@ -12,3 +12,4 @@ public:
   void offerPokemonChoices(Player &player);
   void explainMainQuest(Player &player);
 };
+}

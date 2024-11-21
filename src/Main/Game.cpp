@@ -7,6 +7,7 @@
 #include "../../include/Battle/WildEncounterManager.hpp"
 #include <iostream>
 using namespace std;
+using namespace N_Main{
 
 Game::Game() {
   // Create a sample grass environment with actual Pokemon objects
@@ -98,4 +99,5 @@ void Game::visitPokeCenter(Player &player) {
     player.chosenPokemon.heal(); // Heal the player's Pokémon
     cout << player.chosenPokemon.name << "'s health is fully restored!\n";
   }
+}
 }

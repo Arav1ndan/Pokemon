@@ -3,6 +3,7 @@
 #include "../../include/Utility/Utility.hpp"
 #include <iostream>
 using namespace std;
+using namespace N_Character{
 
 ProfessorOak::ProfessorOak(string p_name) { name = p_name; }
 
@@ -98,4 +99,5 @@ void ProfessorOak::explainMainQuest(Player &player) {
   cout << "Professor Oak: But first... let's just pretend I didn't "
           "forget to set up the actual game loop... Ahem, onwards!\n";
   Utility::waitForEnter();
+}
 }

@@ -1,3 +1,4 @@
+using namespace N_Pokemon{
 enum class PokemonChoice
 {
     CHARMANDER = 1,
@@ -5,3 +6,4 @@ enum class PokemonChoice
     SQUIRTLE,
     PIKACHU // Default choice
 };
+}

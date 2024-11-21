@@ -4,7 +4,7 @@
 #include "../../include/Utility/Utility.hpp"
 #include <iostream>
 using namespace std;
-
+using namespace N_Battle{
 void BattleManager::startBattle(Player &player, Pokemon &wildPokemon) {
   battleState.playerPokemon = player.chosenPokemon;
   battleState.wildPokemon = wildPokemon;
@@ -46,4 +46,5 @@ void BattleManager::handleBattleOutcome() {
   } else {
     cout << "You defeated the wild " << battleState.wildPokemon.name << "!\n";
   }
+}
 }
