@@ -5,7 +5,7 @@
 #include "../../include/Utility/Utility.hpp"
 #include "iostream"
 using namespace std;
-
+using namespace N_Player{
 Player::Player() {
   name = "Trainer";
   chosenPokemon = Pokemon(); // Using the default Pokemon constructor
@@ -33,4 +33,5 @@ void Player::choosePokemon(int choice) {
   }
   cout << "Player " << name << " chose " << chosenPokemon.name << "!\n";
   Utility::waitForEnter(); // Wait for user to press Enter before proceeding
+}
 }

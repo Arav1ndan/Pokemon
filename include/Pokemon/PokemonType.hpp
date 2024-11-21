@@ -1,5 +1,6 @@
 //#ifndef POKEMONTYPE_HPP  // Unique identifier for this header
 //#define POKEMONTYPE_HPP
+using namespace N_Pokemon{
 enum class PokemonType
 {
     FIRE,
@@ -12,4 +13,5 @@ enum class PokemonType
     BUG
 
 };
+}
 //#endif

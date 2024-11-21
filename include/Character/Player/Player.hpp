@@ -2,7 +2,7 @@
 #include <string>
 #include "Pokemon.hpp"
 using namespace std;
-
+using namespace N_Player{
 class Player {
 public:
     string name;
@@ -13,3 +13,4 @@ public:
 
     void choosePokemon(int choice); // Method to choose a Pokemon
 };
+}

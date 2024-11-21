@@ -1,5 +1,6 @@
 #pragma once
 #include "BattleState.hpp"
+using namespace N_Battle{
 class Player;
 class Pokemon;
 
@@ -13,3 +14,4 @@ private:
     void handleBattleOutcome();
     void updateBattleState(); 
 };
+}
