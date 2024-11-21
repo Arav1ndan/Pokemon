@@ -1,5 +1,7 @@
 #include "Game.hpp"
+#include "../../include/Main/Game.hpp"
 #include "Player.hpp"
+#include "../../include/Character/Player/Player.hpp"
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
 #include "ProfessorOak.hpp"
