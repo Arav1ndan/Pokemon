@@ -1,14 +1,19 @@
 #pragma once
-#include "../../include/Pokemon/Grass.hpp"
-using namespace N_Main{
-class Player;
+#include "../Character/Player/Player.hpp"
+#include "../Pokemon/Grass.hpp"
 
-class Game {
-private:
-  Grass forestGrass;
-public:
-  Game();
-  void gameLoop(Player &player);
-  void visitPokeCenter(Player &player); 
-};
+// class Player;
+namespace N_Main
+{
+  using namespace N_Pokemon;
+  using namespace N_Character::N_Player;
+
+  class Game {
+  private:
+    Grass forestGrass;
+  public:
+    Game();
+    void gameLoop(Player &player);
+    void visitPokeCenter(Player &player); 
+  };
 }
