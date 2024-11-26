@@ -2,15 +2,30 @@
 #include "../../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
 
-namespace N_Pokemon {
-  namespace N_Pokemons {
-    using namespace std;
-    
-    Balbasaur::Balbasaur() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
-    
-    void Balbasaur::vineWhip(Pokemon &target) {
-      cout << name << " uses vine Whip on " << target.name << "!\n";
-      target.takeDamage(20);
+namespace N_Pokemon
+{
+    namespace N_Pokemons
+    {
+        using namespace std;
+
+        Balbasaur::Balbasaur() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
+
+        void Balbasaur::vineWhip(Pokemon &target)
+        {
+
+            cout << name << " uses vine Whip on!\n";
+            N_Utility::Utility::waitForEnter();
+
+            cout << "...\n";
+            N_Utility::Utility::waitForEnter();
+
+            target->takeDamage(attackPower);
+
+            if (target->isFainted())
+                cout << target->name << " fainted!\n";
+            else
+                cout << target->name << " has " << target->health << " HP left.\n";
+            N_Utility::Utility::waitForEnter();
+        }
     }
-  }
 }
