@@ -8,13 +8,24 @@ namespace N_Pokemon
     {
         using namespace std;
 
-        //SCharmander::Charmander() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
+        // SCharmander::Charmander() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
         chosenPokemon = new Charmander();
 
         void Charmander::flameThrower(Pokemon &target)
         {
-            cout << name << " uses Flame Thrower on " << target.name << "!\n";
-            target.takeDamage(20);
+            cout << name << " used FLAME THROWER!\n";
+            N_Utility::Utility::waitForEnter();
+
+            cout << "...\n";
+            N_Utility::Utility::waitForEnter();
+
+            target->takeDamage(attackPower);
+
+            if (target->isFainted())
+                cout << target->name << " fainted!\n";
+            else
+                cout << target->name << " has " << target->health << " HP left.\n";
+            N_Utility::Utility::waitForEnter();
         }
         void Charmander::attack(Pokemon *target)
         {
