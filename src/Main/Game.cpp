@@ -28,7 +28,7 @@ namespace N_Main
     bool keepPlaying = true;
     BattleManager battleManager;
     WildEncounterManager encounterManager;
-    N_Pokemon::Pokemon wildPokemon;
+    //N_Pokemon::Pokemon wildPokemon;
 
     while (keepPlaying) {
       // Clear console before showing options
