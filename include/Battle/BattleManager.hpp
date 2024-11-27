@@ -12,6 +12,6 @@ private:
 
     void battle();
     void handleBattleOutcome();
-    void updateBattleState(); 
+    void updateBattleState();
 };
 }
