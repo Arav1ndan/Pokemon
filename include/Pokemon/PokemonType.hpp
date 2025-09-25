@@ -10,7 +10,8 @@ enum class PokemonType
     NORMAL,
     POISON,
     ROCK,
-    BUG
+    BUG,
+    FLYING
 
 };
 }

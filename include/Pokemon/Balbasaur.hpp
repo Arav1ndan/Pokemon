@@ -2,16 +2,13 @@
 #include "../Pokemon.hpp"
 
 namespace N_Pokemon {
-  namespace N_Pokemons {
+    namespace N_Pokemons {
     
-    class Balbasaur : public Pokemon {
-    private:
-    void vineWhip(Pokemon &target);
+        class Bulbasaur : public Pokemon {
+        public:
+            Bulbasaur();
+            void attack(Move selectedMove, Pokemon* target) override; 
+        };
     
-    public:
-      Balbasaur();
-      
-    };
-    
-  }
+    }
 }
